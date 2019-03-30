@@ -24,7 +24,19 @@ export class Photo {
   @Column()
   isPublished: boolean;
 
-  constructor(photo: CreatePhotoDto) {
-    return { ...this, photo };
+  constructor(
+    photo: CreatePhotoDto = {
+      name: '',
+      description: '',
+      filename: '',
+      views: 0,
+      isPublished: false,
+    },
+  ) {
+    this.name = photo.name;
+    this.description = photo.description;
+    this.filename = photo.filename;
+    this.views = photo.views;
+    this.isPublished = photo.isPublished;
   }
 }

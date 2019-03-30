@@ -8,7 +8,6 @@ import {
 } from '@nestjs/common';
 import { PhotoService } from './photo.service';
 import { Photo } from './photo.entity';
-import { validate } from 'class-validator';
 import { CreatePhotoDto } from './dto/create-photo.dto';
 
 @Controller('photo')
@@ -21,21 +20,9 @@ export class PhotoController {
   }
 
   @Post()
-  async create(@Body() photo: CreatePhotoDto) {
-    const newPhoto = new Photo(photo);
+  async create(@Body() photo: Photo) {
+    // const newPhoto = new Photo(photo);
 
-    const errors = await validate(newPhoto);
-    console.log("Errors", errors)
-    if (errors)
-      throw new HttpException(
-        {
-          status: HttpStatus.BAD_REQUEST,
-          error: errors,
-        },
-        HttpStatus.BAD_REQUEST,
-      );
-
-    return 'ok';
-    // return this.photoService.create(photo);
+    return this.photoService.create(photo);
   }
 }
