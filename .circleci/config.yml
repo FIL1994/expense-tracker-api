@@ -9,9 +9,6 @@ jobs:
           name: Update Node
           command: npm i -g npm
       - run:
-          name: Yarn?
-          command: yarn -v
-      - run:
           name: Install Packages
           command: npm ci
       - run:
