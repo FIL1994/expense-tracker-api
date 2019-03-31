@@ -1,14 +1,6 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  HttpException,
-  HttpStatus,
-} from '@nestjs/common';
+import { Controller, Get, Post, Body } from '@nestjs/common';
 import { PhotoService } from './photo.service';
 import { Photo } from './photo.entity';
-import { CreatePhotoDto } from './dto/create-photo.dto';
 
 @Controller('photo')
 export class PhotoController {
@@ -21,8 +13,6 @@ export class PhotoController {
 
   @Post()
   async create(@Body() photo: Photo) {
-    // const newPhoto = new Photo(photo);
-
     return this.photoService.create(photo);
   }
 }
