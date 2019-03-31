@@ -6,8 +6,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Update Node
+          name: Update NPM
           command: npm i -g npm
+      - run:
+          name: Node Version
+          command: node -v
       - run:
           name: Install Packages
           command: npm ci
