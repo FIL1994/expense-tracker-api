@@ -49,16 +49,9 @@
     "ts-node": "^7.0.1",
     "tsconfig-paths": "^3.7.0",
     "tslint": "5.12.1",
-    "ttypescript": "^1.5.6",
     "typescript": "^3.2.4"
   },
   "jest": {
-    "globals": {
-      "ts-jest": {
-        "compiler": "ttypescript",
-        "tsConfig": "tsconfig.json"
-      }
-    },
     "moduleFileExtensions": [
       "js",
       "json",
