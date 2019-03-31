@@ -4,9 +4,10 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Connection } from 'typeorm';
 import { PhotoModule } from './photo/photo.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(), PhotoModule],
+  imports: [TypeOrmModule.forRoot(), AuthModule, PhotoModule],
   controllers: [AppController],
   providers: [AppService],
 })
