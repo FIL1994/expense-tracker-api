@@ -1,8 +1,8 @@
 version: 2
 jobs:
   build:
-    machine: true
-    parallelism: 4
+    docker:
+      - image: circleci/node:10.15.3-jessie
     steps:
       - checkout
       - run:
