@@ -6,6 +6,12 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Update Node
+          command: npm i -g npm
+      - run:
+          name: Yarn?
+          command: yarn -v
+      - run:
           name: Install Packages
           command: npm ci
       - run:
@@ -15,9 +21,9 @@ jobs:
       #     name: Report Coverage
       #     command: bash <(curl -s https://codecov.io/bash)
       - store_test_results:
-            path: coverage
+          path: coverage
 workflows:
-    version: 2
-    test_flow:
-        jobs:
-          - build
+  version: 2
+  test_flow:
+    jobs:
+      - build
