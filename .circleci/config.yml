@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: Install Packages
-          command: npm install
+          command: npm ci
       - run:
           name: Run Tests
           command: npm run test:cov
